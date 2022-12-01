@@ -2,27 +2,11 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
 	"os"
 	"sort"
 	"strconv"
 	"strings"
 )
-
-func OnPage(link string) string {
-	res, err := http.Get(link)
-	if err != nil {
-		log.Fatal(err)
-	}
-	content, err := ioutil.ReadAll(res.Body)
-	res.Body.Close()
-	if err != nil {
-		log.Fatal(err)
-	}
-	return string(content)
-}
 
 func MaxCalory(data string) []int {
 	caloryList := []int{}
